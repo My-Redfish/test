@@ -21,7 +21,7 @@ bmcsver node add <node> --host 10.1.1.1 --user admin --pass admin
 bmcsvr node list
 
 ### Inventory
-'''
+```
 bmcsvr inventory <node> cpu
 bmcsvr inventory <node> mem
 bmcsvr inventory <node> fru
@@ -30,7 +30,7 @@ bmcsvr inventory <node> chassis
 bmcsvr inventory <node> gpu
 bmcsvr inventory <node> psu
 bmcsvr inventory <node> storage
-'''
+```
 ### sensors
 bmcsvr sensors <node> fan
 bmcsvr sensors <node> temp
