@@ -11,7 +11,7 @@ sudo cp -a "$TMP/bmcsvr/." /usr/local/lib/bmcsvr/
 
 sudo ln -sf \
     /usr/local/lib/bmcsvr/bmcsvr-cli.sh \
-    /usr/local/bin/bmcsvr
+    /usr/local/bin/bmcsvc
 
 rm -rf "$TMP"
 
