@@ -9,6 +9,7 @@ curl -fsSL https://github.com/My-Redfish/test/releases/latest/download/install.s
 ```
 ipmitool
 redfishtool
+Yafuflash
 bmcsvc-cli
 ```
 ## bmcsvc 使用範例
