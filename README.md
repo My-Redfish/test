@@ -80,7 +80,11 @@ bmcsvc logs <node> event
 ```
 bmcsvc webui <node>
 ```
-
+### firmware
+```
+bmcsvc firmware <node> list
+bmcsvc firmware <node> update <filepath>
+```
 持續整理ing
 
 
