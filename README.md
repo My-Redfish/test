@@ -23,10 +23,12 @@ bmcsvc version
 ```
 bmcsvc scan 10.1.6.0/24
 ```
-### 建立管理節點
+### node
 ```
 bmcsvc node add <node> --host 10.1.1.1 --user admin --pass admin
 bmcsvc node list
+bmcsvc node remove <node>
+bmcsvc node set <node> host 10.1.1.1
 ```
 ### Inventory
 ```
