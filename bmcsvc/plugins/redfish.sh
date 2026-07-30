@@ -3139,7 +3139,7 @@ cmd_firmware() {
        #      -X POST "${upd_url}/upload" \
        #      -H "Content-Type: application/octet-stream" \
        #      --data-binary "@${fw_file}" | jq .
-         echo "Y" | ./Yafuflash -nw -ip $BMC_HOST -u $BMC_USER -p $BMC_PASS $fw_file
+         echo "Y" | Yafuflash -nw -ip $BMC_HOST -u $BMC_USER -p $BMC_PASS $fw_file
         ;;
     *)
         die "Unknown firmware action: $action  (list | upload <file>)"
