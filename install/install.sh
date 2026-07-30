@@ -13,6 +13,8 @@ sudo ln -sf \
     /usr/local/lib/bmcsvc/bmcsvc-cli.sh \
     /usr/local/bin/bmcsvc
 
+sudo chmod +x /usr/local/bin/bmcsvc
+
 sudo mkdir -p /usr/local/lib/Yafuflash
 
 sudo cp -a "$TMP/Yafuflash/." /usr/local/lib/Yafuflash/
@@ -20,7 +22,9 @@ sudo cp -a "$TMP/Yafuflash/." /usr/local/lib/Yafuflash/
 sudo ln -sf \
     /usr/local/lib/Yafuflash/Linux_x86_64/Yafuflash \
     /usr/local/bin/Yafuflash
-    
+
+sudo chmod +x /usr/local/bin/Yafuflash    
+
 rm -rf "$TMP"
 
 echo "Installed."
