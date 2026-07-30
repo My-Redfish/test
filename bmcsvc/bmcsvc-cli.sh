@@ -26,11 +26,11 @@ SCRIPT=$(readlink -f "${BASH_SOURCE[0]}")
 SCRIPT_DIR=$(dirname "$SCRIPT")
 BASE_DIR="$SCRIPT_DIR"
 
-# 載入核心
+
 source "$BASE_DIR/lib/core.sh"
 source "$BASE_DIR/lib/help.sh"
 
-# 載入 plugins
+
 for f in "$BASE_DIR"/plugins/*.sh; do
     source "$f"
 done
