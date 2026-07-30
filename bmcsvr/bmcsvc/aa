@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  AMISensor  v1.0.0-->
+<!--#                                                                                      -->
+<!--# For a detailed change log, see the README file contained in the DSP8010 bundle,      -->
+<!--# available at http://www.dmtf.org/standards/redfish                                   -->
+<!--# Copyright 2014-2017 Distributed Management Task Force, Inc. (DMTF).                  -->
+<!--# For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+    <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="/redfish/v1/JsonSchemas/AMIChassisPowerThermal_v1.xml">
+    <edmx:Include Namespace="AMIChassisPowerThermal"/>
+    <edmx:Include Namespace="AMIChassisPowerThermal.v1_0_0"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="AMISensor">
+      <EntityType Name="AMISensor" Abstract="true">
+        <Annotation Term="OData.Description" String="This is the schema definition for Lenovo Port Forwarding Service."/>
+        <Annotation Term="OData.LongDescription" String="This is the schema definition for Lenovo Port Forwarding Service."/>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record>
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Updatable" Bool="true"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record>
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </EntityType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="AMISensor.v1_0_0">
+      <EntityType Name="AMISensor" BaseType="AMISensor.AMISensor">
+        <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+        <Annotation Term="OData.Description" String="This allows additional configuring of the Redfish AMISensor."/>
+        <Annotation Term="OData.LongDescription" String="This allows additional configuring of the Redfish AMISensor."/>
+        <Property Name="DisableAllEventMessage" Type="Edm.Boolean">
+          <Annotation Term="OData.Description" String="The Disable All Event Message of the BmcFreeMemory Sensor."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the Sensor's DisableAllEventMessage."/>
+        </Property>
+        <Property Name="NegativeHysteresis" Type="Edm.Decimal">
+          <Annotation Term="OData.Description" String="The Negative hysteresis of the BmcFreeMemory Sensor."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the Sensor's NegativeHysteresis."/>
+        </Property>
+        <Property Name="PositiveHysteresis" Type="Edm.Decimal">
+          <Annotation Term="OData.Description" String="The Positive hysteresis of the BmcFreeMemory Sensor."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the Sensor's PositiveHysteresis."/>
+        </Property>
+        <Property Name="SensorNumberLun" Type="Edm.String">
+          <Annotation Term="OData.Description" String="The Negative hysteresis of the BmcFreeMemory Sensor."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the Sensor's NegativeHysteresis."/>
+        </Property>
+        <Property Name="SensorScanning" Type="Edm.Boolean">
+          <Annotation Term="OData.Description" String="The Sensor Scanning of the BmcFreeMemory Sensor."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the Sensor's SensorScanning."/>
+        </Property>
+        <Property Name="AssertionsEnabled" Type="Collection(AMISensor.v1_0_0.AssertionsEnabledFunction)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The Assertions Enabled of the BmcFreeMemory Sensor."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the Sensor's AssertionsEnabled."/>
+        </Property>
+        <Property Name="DeassertionsEnabled" Type="Collection(AMISensor.v1_0_0.DeassertionsEnabledFunction)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The Deassertions Enabled of the BmcFreeMemory Sensor."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the Sensor's DeassertionsEnabled."/>
+        </Property>
+        <Property Name="Ami" Type="AMISensor.v1_0_0.AMIChassisPowerThermal">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This is the schema definition for the OEM section under Chassis Power/Thermal URIs."/>
+          <Annotation Term="OData.LongDescription" String="This resource shall be used to represent the OEM attributes available under Chassis Power/Thermal URIs."/>
+        </Property>
+      </EntityType>
+      <ComplexType Name="AMIChassisPowerThermal">
+        <Property Name="OwnerLUN" Type="Edm.Int64" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The LUN number of a Temperature/Fan/Voltage Sensor."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall specify the LUN number of a Temperature/Fan/Voltage Sensor."/>
+        </Property>
+      </ComplexType>
+      <EnumType Name="AssertionsEnabledFunction">
+        <Member Name="LowerNonRecoverableGoingLow">
+          <Annotation Term="OData.Description" String="Below normal range and is fatal."/>
+        </Member>
+        <Member Name="LowerNonRecoverableGoingHigh">
+          <Annotation Term="OData.Description" String="Below normal range and is fatal."/>
+        </Member>
+        <Member Name="LowerCriticalGoingLow">
+          <Annotation Term="OData.Description" String="Below normal range but not yet fatal."/>
+        </Member>
+        <Member Name="LowerCriticalGoingHigh">
+          <Annotation Term="OData.Description" String="Below normal range but not yet fatal."/>
+        </Member>
+        <Member Name="LowerNonCriticalGoingLow">
+          <Annotation Term="OData.Description" String="Below normal range."/>
+        </Member>
+        <Member Name="LowerNonCriticalGoingHigh">
+          <Annotation Term="OData.Description" String="Below normal range."/>
+        </Member>
+        <Member Name="UpperNonRecoverableGoingLow">
+          <Annotation Term="OData.Description" String="Above normal range and is fatal."/>
+        </Member>
+        <Member Name="UpperNonRecoverableGoingHigh">
+          <Annotation Term="OData.Description" String="Above normal range and is fatal."/>
+        </Member>
+        <Member Name="UpperCriticalGoingLow">
+          <Annotation Term="OData.Description" String="Above normal range but not yet fatal."/>
+        </Member>
+        <Member Name="UpperCriticalGoingHigh">
+          <Annotation Term="OData.Description" String="Above normal range but not yet fatal."/>
+        </Member>
+        <Member Name="UpperNonCriticalGoingLow">
+          <Annotation Term="OData.Description" String="Above normal range."/>
+        </Member>
+        <Member Name="UpperNonCriticalGoingHigh">
+          <Annotation Term="OData.Description" String="Above normal range."/>
+        </Member>
+      </EnumType>
+      <EnumType Name="DeassertionsEnabledFunction">
+        <Member Name="LowerNonRecoverableGoingLow">
+          <Annotation Term="OData.Description" String="Below normal range and is fatal."/>
+        </Member>
+        <Member Name="LowerNonRecoverableGoingHigh">
+          <Annotation Term="OData.Description" String="Below normal range and is fatal."/>
+        </Member>
+        <Member Name="LowerCriticalGoingLow">
+          <Annotation Term="OData.Description" String="Below normal range but not yet fatal."/>
+        </Member>
+        <Member Name="LowerCriticalGoingHigh">
+          <Annotation Term="OData.Description" String="Below normal range but not yet fatal."/>
+        </Member>
+        <Member Name="LowerNonCriticalGoingLow">
+          <Annotation Term="OData.Description" String="Below normal range."/>
+        </Member>
+        <Member Name="LowerNonCriticalGoingHigh">
+          <Annotation Term="OData.Description" String="Below normal range."/>
+        </Member>
+        <Member Name="UpperNonRecoverableGoingLow">
+          <Annotation Term="OData.Description" String="Above normal range and is fatal."/>
+        </Member>
+        <Member Name="UpperNonRecoverableGoingHigh">
+          <Annotation Term="OData.Description" String="Above normal range and is fatal."/>
+        </Member>
+        <Member Name="UpperCriticalGoingLow">
+          <Annotation Term="OData.Description" String="Above normal range but not yet fatal."/>
+        </Member>
+        <Member Name="UpperCriticalGoingHigh">
+          <Annotation Term="OData.Description" String="Above normal range but not yet fatal."/>
+        </Member>
+        <Member Name="UpperNonCriticalGoingLow">
+          <Annotation Term="OData.Description" String="Above normal range."/>
+        </Member>
+        <Member Name="UpperNonCriticalGoingHigh">
+          <Annotation Term="OData.Description" String="Above normal range."/>
+        </Member>
+      </EnumType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
