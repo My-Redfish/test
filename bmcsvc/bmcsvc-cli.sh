@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # =============================================================================
-# bmcsvr-cli.sh — BMC Server Discovery Tool
+# bmcsvc-cli.sh — BMC Server Discovery Tool
 # =============================================================================
 
 #set -euo pipefail
