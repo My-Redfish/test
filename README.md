@@ -84,8 +84,10 @@ bmcsvc webui <node>
 ```
 ### firmware
 ```
-bmcsvc firmware <node> list
-bmcsvc firmware <node> update <filepath>
+bmcsvc bmcfw <node> status
+bmcsvc bmcfw <node> update <filepath>
+bmcsvc biosfw <node> status
+bmcsvc biosfw <node> update <filepath>
 ```
 持續整理ing
 
