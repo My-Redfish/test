@@ -74,9 +74,7 @@ bmcsvc fanctl <node> silent
 ```
 ### logs
 ```
-bmcsvc logs <node> system
-bmcsvc logs <node> audit
-bmcsvc logs <node> event
+bmcsvc logs <node> 
 ```
 ### webui
 ```
