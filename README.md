@@ -80,12 +80,17 @@ bmcsvc logs <node>
 ```
 bmcsvc webui <node>
 ```
-### firmware
+### bmc firmware
 ```
 bmcsvc bmcfw <node> status
 bmcsvc bmcfw <node> update <filepath>
+bmcsvc bmcfw <node> update live
+```
+### bios firmware
+```
 bmcsvc biosfw <node> status
 bmcsvc biosfw <node> update <filepath>
+bmcsvc biosfw <node> update live
 ```
 持續整理ing
 
