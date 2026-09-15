@@ -23,7 +23,7 @@ bmcsvc version
 ```
 bmcsvc scan 10.1.6.0/24
 ```
-### node
+### Node
 ```
 bmcsvc node add <node> --host 10.1.1.1 --user admin --pass admin
 bmcsvc node list
