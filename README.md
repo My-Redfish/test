@@ -39,6 +39,7 @@ bmcsvc inventory <node> system
 bmcsvc inventory <node> chassis
 bmcsvc inventory <node> gpu
 bmcsvc inventory <node> psu
+bmcsvc inventory <node> pcie
 bmcsvc inventory <node> storage
 ```
 ### Sensors
@@ -74,7 +75,8 @@ bmcsvc fanctl <node> silent
 ```
 ### logs
 ```
-bmcsvc logs <node> 
+bmcsvc logs <node> sel
+bmcsvc logs <node> info
 ```
 ### webui
 ```
