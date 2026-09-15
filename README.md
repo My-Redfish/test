@@ -73,14 +73,18 @@ bmcsvc fanctl <node> fullspeed
 bmcsvc fanctl <node> normal
 bmcsvc fanctl <node> silent
 ```
-### logs
+### logs (SEL)
 ```
 bmcsvc logs <node> sel
 bmcsvc logs <node> info
 ```
-### webui
+### webui (需輸入login UD/Password)
 ```
 bmcsvc webui <node>
+```
+### amisetup (需輸入login UD/Password)
+```
+bmcsvc amisetup <node>
 ```
 ### bmc firmware
 ```
